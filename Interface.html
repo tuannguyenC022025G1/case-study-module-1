@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Beer Collector</title>
+    <link rel="stylesheet" href="Decoration.css">
+
+
+</head>
+<body>
+
+<button id="start-button" onclick="startGame()">Start Game</button>
+
+<div id="game-container">
+    <div id="score">Score: 0</div>
+    <div id="timer">Time: 60s</div>
+    <div id="player"></div>
+    <div id="ball"></div>
+</div>
+
+<div id="end-message">The End!</div>
+<div id="buttons-container">
+    <button id="replay-button" onclick="startGame()">Replay</button>
+    <button id="quit-button" onclick="quitGame()">Quit Game</button>
+</div>
+<script src="Operation.js"></script>
+</body>
+</html>
