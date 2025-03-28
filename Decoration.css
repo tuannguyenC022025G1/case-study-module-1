@@ -1,4 +1,3 @@
-
 body {
     display: flex;
     align-items: center;
@@ -15,7 +14,9 @@ body {
     border: 2px solid #000;
     overflow: hidden;
     display: none;
-    background-color: white;
+    background-image: url('image/clouds.jpg');
+    background-size: cover;
+
 }
 
 #player {
@@ -23,7 +24,8 @@ body {
     bottom: 0;
     width: 50px;
     height: 50px;
-    background-color: blue;
+    background-image: url('image/két bia đỏ.png');
+    background-size: cover;
     border-radius: 50%;
 }
 
@@ -32,11 +34,12 @@ body {
     top: 0;
     width: 30px;
     height: 30px;
-    background-color: red;
+    background-image: url('image/441effe8652aaee62dc33532f70cd381.png_wh860.png');
+    background-size: cover;
     border-radius: 50%;
 }
 
-/* Căn thời gian & điểm về góc trên bên trái */
+/* Căn times, scores về góc trên bên trái */
 #score, #timer {
     position: absolute;
     top: 10px;

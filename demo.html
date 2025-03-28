@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            flex-direction: column;
+        }
+
+        #game-container {
+            position: relative;
+            width: 400px;
+            height: 400px;
+            border: 2px solid #000;
+            overflow: hidden;
+            display: none;
+            background-image: url('image/clouds.jpg');
+            background-size: cover;
+
+        }
+
+        #player {
+            position: absolute;
+            bottom: 0;
+            width: 50px;
+            height: 50px;
+            background-image: url('image/két bia đỏ.png');
+            background-size: cover;
+            border-radius: 50%;
+        }
+
+        #ball {
+            position: absolute;
+            top: 0;
+            width: 30px;
+            height: 30px;
+            background-image: url('image/441effe8652aaee62dc33532f70cd381.png_wh860.png');
+            background-size: cover;
+            border-radius: 50%;
+        }
+
+        /* Căn times, scores về góc trên bên trái */
+        #score, #timer {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        #timer {
+            top: 40px;
+        }
+
+        #start-button, #replay-button, #quit-button {
+            padding: 15px 30px;
+            font-size: 20px;
+            cursor: pointer;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+
+        #buttons-container {
+            display: none;
+        }
+
+        #end-message {
+            display: none;
+            font-size: 24px;
+            font-weight: bold;
+            color: red;
+            margin-top: 20px;
+        }
+
+    </style>
+</head>
+<body>
+<button id="start-button" onclick="startGame()">Start Game</button>
+
+<div id="game-container">
+    <div id="score">Score: 0</div>
+    <div id="timer">Time: 60s</div>
+    <div id="player"></div>
+    <div id="ball"></div>
+</div>
+
+<div id="end-message">The End!</div>
+<div id="buttons-container">
+    <button id="replay-button" onclick="startGame()">Replay</button>
+    <button id="quit-button" onclick="quitGame()">Quit Game</button>
+</div>
+<script>
+    const player = document.getElementById("player");
+    const ball = document.getElementById("ball");
+    const gameContainer = document.getElementById("game-container");
+    const scoreDisplay = document.getElementById("score");
+    const timerDisplay = document.getElementById("timer");
+    const startButton = document.getElementById("start-button");
+    const endMessage = document.getElementById("end-message");
+    const buttonsContainer = document.getElementById("buttons-container");
+
+    let score = 0;
+    let misses = 0;
+    let timeLeft = 60;
+    let gameOver = false;
+    let gameStarted = false;
+
+    let playerX = 175;
+    let ballX = Math.random() * 370;
+    let ballY = 0;
+
+    player.style.left = `${playerX}px`;
+    ball.style.left = `${ballX}px`;
+
+    const isCollision = (player, ball) => {
+        const playerRect = player.getBoundingClientRect();
+        const ballRect = ball.getBoundingClientRect();
+        return (
+            playerRect.top <= ballRect.bottom &&
+            playerRect.bottom >= ballRect.top &&
+            playerRect.left <= ballRect.right &&
+            playerRect.right >= ballRect.left
+        );
+    };
+
+    const updateGameArea = () => {
+        if (gameOver) return;
+
+        if (ballY > 370) {
+            ballX = Math.random() * 370;
+            ballY = 2;
+            misses++;
+
+            if (misses >= 3) {
+                endGame("You missed 3 balls!");
+                return;
+            }
+        }
+
+        ballY += 10;
+        player.style.left = `${playerX}px`;
+        ball.style.left = `${ballX}px`;
+        ball.style.top = `${ballY}px`;
+
+        if (isCollision(player, ball)) {
+            ballX = Math.random() * 370;
+            ballY = 0;
+            score++;
+            scoreDisplay.textContent = `Score: ${score}`;
+        }
+
+        requestAnimationFrame(updateGameArea);
+    };
+
+    const updateTimer = () => {
+        if (gameOver) return;
+
+        if (timeLeft > 0) {
+            timeLeft--;
+            timerDisplay.textContent = `Time: ${timeLeft}s`;
+            setTimeout(updateTimer, 1000);
+        } else {
+            endGame("Time's up!");
+        }
+    };
+
+    const endGame = (message) => {
+        gameOver = true;
+        gameStarted = false;
+        gameContainer.style.display = "none";
+        endMessage.style.display = "block";
+        buttonsContainer.style.display = "block";
+    };
+
+    const startGame = () => {
+        gameOver = false;
+        gameStarted = true;
+        score = 0;
+        misses = 0;
+        timeLeft = 60;
+        scoreDisplay.textContent = `Score: 0`;
+        timerDisplay.textContent = `Time: 60s`;
+        ballX = Math.random() * 370;
+        ballY = 3;
+        startButton.style.display = "none";
+        gameContainer.style.display = "block";
+        endMessage.style.display = "none";
+        buttonsContainer.style.display = "none";
+        updateGameArea();
+        updateTimer();
+    };
+
+    const quitGame = () => {
+        document.body.innerHTML = "<h1>Thank you for playing!</h1>";
+    };
+
+    gameContainer.addEventListener("mousemove", (event) => {
+        if (!gameStarted) return;
+        playerX = event.clientX - gameContainer.getBoundingClientRect().left - 25;
+    });
+
+</script>
+</body>
+</html>

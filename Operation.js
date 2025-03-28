@@ -15,7 +15,7 @@ let gameStarted = false;
 
 let playerX = 175;
 let ballX = Math.random() * 370;
-let ballY = 3;
+let ballY = 0;
 
 player.style.left = `${playerX}px`;
 ball.style.left = `${ballX}px`;
