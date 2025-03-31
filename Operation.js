@@ -36,7 +36,7 @@ const updateGameArea = () => {
 
     if (ballY > 370) {
         ballX = Math.random() * 370;
-        ballY = 2;
+        ballY = 0;
         misses++;
 
         if (misses >= 3) {
@@ -99,7 +99,7 @@ const startGame = () => {
 };
 
 const quitGame = () => {
-    document.body.innerHTML = "<h1>Thank you for playing!</h1>";
+    document.body.innerHTML = "<h1 style='color: red'>Thank you for playing!</h1>";
 };
 
 gameContainer.addEventListener("mousemove", (event) => {

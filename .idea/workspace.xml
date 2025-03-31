@@ -5,9 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="11fd44dd-c795-45a6-ab5d-ccecf61f377f" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/image/1045.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/chai-bia.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/két-bia.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Decoration.css" beforeDir="false" afterPath="$PROJECT_DIR$/Decoration.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interface.html" beforeDir="false" afterPath="$PROJECT_DIR$/Interface.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Operation.js" beforeDir="false" afterPath="$PROJECT_DIR$/Operation.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo.html" beforeDir="false" afterPath="$PROJECT_DIR$/demo.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/441effe8652aaee62dc33532f70cd381.png_wh860.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/két bia đỏ.png" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,9 +57,15 @@
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;advanced.settings&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\HT\Desktop\case-study-module-1\image" />
+    </key>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -71,11 +84,26 @@
       <workItem from="1743046930919" duration="968000" />
       <workItem from="1743066513156" duration="4361000" />
       <workItem from="1743077575067" duration="355000" />
-      <workItem from="1743123966070" duration="9066000" />
+      <workItem from="1743123966070" duration="24362000" />
+      <workItem from="1743177124688" duration="1621000" />
+      <workItem from="1743384139293" duration="121000" />
+      <workItem from="1743384271514" duration="1128000" />
+      <workItem from="1743385469236" duration="16517000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

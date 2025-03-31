@@ -3,15 +3,17 @@ body {
     align-items: center;
     justify-content: center;
     height: 100vh;
-    background-color: #f0f0f0;
+    background-image: url('image/1045.jpg');
+    background-size: cover;
     flex-direction: column;
 }
+
 
 #game-container {
     position: relative;
     width: 400px;
     height: 400px;
-    border: 2px solid #000;
+    border: none ;
     overflow: hidden;
     display: none;
     background-image: url('image/clouds.jpg');
@@ -24,7 +26,7 @@ body {
     bottom: 0;
     width: 50px;
     height: 50px;
-    background-image: url('image/két bia đỏ.png');
+    background-image: url('image/két-bia.png');
     background-size: cover;
     border-radius: 50%;
 }
@@ -34,12 +36,11 @@ body {
     top: 0;
     width: 30px;
     height: 30px;
-    background-image: url('image/441effe8652aaee62dc33532f70cd381.png_wh860.png');
+    background-image: url('image/chai-bia.png');
     background-size: cover;
     border-radius: 50%;
 }
 
-/* Căn times, scores về góc trên bên trái */
 #score, #timer {
     position: absolute;
     top: 10px;
@@ -63,6 +64,7 @@ body {
     color: white;
     border: none;
     border-radius: 5px;
+    text-shadow: 0 0 5px cyan, 0 0 10px blue, 0 0 15px purple;
 }
 
 #buttons-container {
@@ -73,6 +75,7 @@ body {
     display: none;
     font-size: 24px;
     font-weight: bold;
-    color: red;
+    color:darkred;
     margin-top: 20px;
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
 }
