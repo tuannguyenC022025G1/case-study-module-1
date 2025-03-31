@@ -10,15 +10,24 @@
 <body>
 
 <button id="start-button" onclick="startGame()">Start Game</button>
-
 <div id="game-container">
     <div id="score">Score: 0</div>
     <div id="timer">Time: 60s</div>
     <div id="player"></div>
-    <div id="ball"></div>
 </div>
-
-<div id="end-message"><h2>Game Over!</h2><br></div>
+<div id="leaderboard">
+    <h2>Leaderboard</h2>
+    <table>
+        <thead>
+        <tr>
+            <th>Rank</th>
+            <th>Player</th>
+            <th>Score</th>
+        </tr>
+        </thead>
+        <tbody id="leaderboard-body"></tbody>
+    </table>
+</div>
 <div id="buttons-container">
     <button id="replay-button" onclick="startGame()">Replay</button>
     <button id="quit-button" onclick="quitGame()">Quit Game</button>
